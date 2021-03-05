@@ -2,18 +2,17 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using FoodResort.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace FoodResort.Areas.Identity.Data
+namespace FoodResort.Data
 {
     public class Context : IdentityDbContext<User>
     {
+        public DbSet<Content> Content { get; set; }
 
-        public Context(DbContextOptions<Context> options)
-            : base(options)
+        public Context(DbContextOptions<Context> options) : base(options)
         {
         }
 
@@ -28,6 +27,12 @@ namespace FoodResort.Areas.Identity.Data
             builder.Entity<IdentityUserClaim<string>>().ToTable("UserClaims");
             builder.Entity<IdentityUserToken<string>>().ToTable("UserTokens");
             builder.Entity<IdentityRole>().ToTable("Roles");
+
+
+            builder.Entity<Content>().HasData(new Content("About","Lorem ipsum"));
+            builder.Entity<Content>().HasData(new Content("FAQ", "Lorem ipsum"));
+            builder.Entity<Content>().HasData(new Content("Contact", "Lorem ipsum"));
+
 
         }
     }

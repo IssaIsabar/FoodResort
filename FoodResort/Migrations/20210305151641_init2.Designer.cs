@@ -4,14 +4,16 @@ using FoodResort.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace FoodResort.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20210305151641_init2")]
+    partial class init2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -37,29 +39,6 @@ namespace FoodResort.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Content");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("ed8ab516-6b92-4d6d-85c8-6eed376f6334"),
-                            Body = "Lorem ipsum",
-                            Created = new DateTime(2021, 3, 5, 16, 24, 43, 824, DateTimeKind.Local).AddTicks(7895),
-                            Title = "About"
-                        },
-                        new
-                        {
-                            Id = new Guid("be836d12-7657-435e-8f3e-f1f891f97549"),
-                            Body = "Lorem ipsum",
-                            Created = new DateTime(2021, 3, 5, 16, 24, 43, 830, DateTimeKind.Local).AddTicks(7502),
-                            Title = "FAQ"
-                        },
-                        new
-                        {
-                            Id = new Guid("5a48fea0-ea31-4f4a-81ce-a0176a24b99d"),
-                            Body = "Lorem ipsum",
-                            Created = new DateTime(2021, 3, 5, 16, 24, 43, 830, DateTimeKind.Local).AddTicks(7752),
-                            Title = "Contact"
-                        });
                 });
 
             modelBuilder.Entity("FoodResort.Data.Place", b =>
