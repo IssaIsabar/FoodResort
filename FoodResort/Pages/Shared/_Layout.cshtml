@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - FoodResort</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <script src="https://kit.fontawesome.com/8a0fbcf603.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body>
@@ -21,12 +22,38 @@
 
                     <ul class="navbar-nav flex-grow-1">
 
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="/Restaurants">Restaurants</a>
+                        </li>
+
                         @foreach (var content in nav.GetNav())
                         {
                             <li class="nav-item">
                                 <a class="nav-link text-dark" href="/content/@content.Title">@content.Title</a>
                             </li>
                         }
+                    </ul>
+
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+
+                            <div class="card-body row no-gutters align-items-center">
+                                
+                                <div class="col-auto">
+                                    <i class="fas fa-search h5 text-body"></i>
+                                </div>
+
+                                <div class="col">
+                                    <input id="searchInput" class="form-control form-control-sm form-control-borderless" type="text" placeholder="Search...">
+                                </div>
+
+                                <div class="col-auto">
+                                    <button id="searchBtn" class="btn btn-sm btn-success" type="submit">Search</button>
+                                </div>
+
+                            </div>
+
+                        </li>
 
                     </ul>
                 </div>

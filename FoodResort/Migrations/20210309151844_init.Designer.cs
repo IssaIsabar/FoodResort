@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FoodResort.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20210305152444_init3")]
-    partial class init3
+    [Migration("20210309151844_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -43,23 +43,23 @@ namespace FoodResort.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("ed8ab516-6b92-4d6d-85c8-6eed376f6334"),
+                            Id = new Guid("9c18d8ae-c8bc-4335-8c07-22e55f34fcc8"),
                             Body = "Lorem ipsum",
-                            Created = new DateTime(2021, 3, 5, 16, 24, 43, 824, DateTimeKind.Local).AddTicks(7895),
+                            Created = new DateTime(2021, 3, 9, 16, 18, 43, 414, DateTimeKind.Local).AddTicks(3843),
                             Title = "About"
                         },
                         new
                         {
-                            Id = new Guid("be836d12-7657-435e-8f3e-f1f891f97549"),
+                            Id = new Guid("1c9486b3-5cac-492d-85c1-fd3058c7497e"),
                             Body = "Lorem ipsum",
-                            Created = new DateTime(2021, 3, 5, 16, 24, 43, 830, DateTimeKind.Local).AddTicks(7502),
+                            Created = new DateTime(2021, 3, 9, 16, 18, 43, 421, DateTimeKind.Local).AddTicks(2073),
                             Title = "FAQ"
                         },
                         new
                         {
-                            Id = new Guid("5a48fea0-ea31-4f4a-81ce-a0176a24b99d"),
+                            Id = new Guid("70f4bfb8-c93a-4f52-9305-6d700d8704cd"),
                             Body = "Lorem ipsum",
-                            Created = new DateTime(2021, 3, 5, 16, 24, 43, 830, DateTimeKind.Local).AddTicks(7752),
+                            Created = new DateTime(2021, 3, 9, 16, 18, 43, 421, DateTimeKind.Local).AddTicks(2322),
                             Title = "Contact"
                         });
                 });
@@ -76,6 +76,12 @@ namespace FoodResort.Migrations
                     b.Property<DateTime>("Created")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ImageUrl")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
@@ -90,7 +96,81 @@ namespace FoodResort.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Place");
+                    b.ToTable("Places");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("317128b9-5c05-45df-ac6c-0caeb9aa6eff"),
+                            City = "",
+                            Created = new DateTime(2021, 3, 9, 16, 18, 43, 421, DateTimeKind.Local).AddTicks(4338),
+                            Description = "McDonald's Corporation is an American fast food company, founded in 1940 as a restaurant operated by Richard and Maurice McDonald, in San Bernardino, California, United States.",
+                            ImageUrl = "https://www.qsrmagazine.com/sites/default/files/styles/story_page/public/story/mcdonalds-getting-even-more-serious-about-tech.jpg",
+                            Name = "McDonald's",
+                            Rating = 0.0,
+                            Street = "",
+                            ZipCode = ""
+                        },
+                        new
+                        {
+                            Id = new Guid("25b48e8b-b432-412a-88c6-226a3c6fd2a2"),
+                            City = "",
+                            Created = new DateTime(2021, 3, 9, 16, 18, 43, 422, DateTimeKind.Local).AddTicks(755),
+                            Description = "Burger King is an American multinational chain of hamburger fast food restaurants. Headquartered in Miami-Dade County, Florida, the company was founded in 1953 as Insta-Burger King, a Jacksonville, Florida–based restaurant chain.",
+                            ImageUrl = "https://www.fastighetsvarlden.se/wp-content/uploads/2019/01/fv-burger-king.jpg",
+                            Name = "Burger King",
+                            Rating = 0.0,
+                            Street = "",
+                            ZipCode = ""
+                        },
+                        new
+                        {
+                            Id = new Guid("f97418c4-606e-4b42-9d33-439253290218"),
+                            City = "",
+                            Created = new DateTime(2021, 3, 9, 16, 18, 43, 422, DateTimeKind.Local).AddTicks(915),
+                            Description = "Max Burgers Aktiebolag, earlier Max Hamburgerrestauranger AB, is a fast food corporation from Sweden.",
+                            ImageUrl = "https://www.max.se/contentassets/1b89f49ce6974a1a86271668c1406db4/restaurantstockholm-ulvsundavagen.png",
+                            Name = "Max",
+                            Rating = 0.0,
+                            Street = "",
+                            ZipCode = ""
+                        },
+                        new
+                        {
+                            Id = new Guid("c34f393f-ea9f-441a-8665-c50a31390674"),
+                            City = "",
+                            Created = new DateTime(2021, 3, 9, 16, 18, 43, 422, DateTimeKind.Local).AddTicks(948),
+                            Description = "Subway is an American fast food restaurant franchise that primarily sells submarine sandwiches, salads and beverages. It was founded by the 17 year old Fred DeLuca and financed by Peter Buck in 1965 as Pete's Super Submarines in Bridgeport, Connecticut",
+                            ImageUrl = "https://insidefmcg.com.au/wp-content/uploads/2020/11/Subway7.jpg",
+                            Name = "Subway",
+                            Rating = 0.0,
+                            Street = "",
+                            ZipCode = ""
+                        },
+                        new
+                        {
+                            Id = new Guid("da346ffb-503d-485e-af58-e23bf242d38d"),
+                            City = "",
+                            Created = new DateTime(2021, 3, 9, 16, 18, 43, 422, DateTimeKind.Local).AddTicks(984),
+                            Description = "Pizza Hut is an American restaurant chain and international franchise founded in 1958 in Wichita, Kansas by Dan and Frank Carney. It provides pizza and other Italian-American dishes, including pasta, side dishes and desserts.",
+                            ImageUrl = "https://1.bp.blogspot.com/-fXQqW5OlBwY/Wzm4v7YZ2gI/AAAAAAABA0w/TaEGHb5vSqEld1xm2M9ia1QQuPj7-qzbgCKgBGAs/s1600/20180701_172010.jpg",
+                            Name = "Pizza hut",
+                            Rating = 0.0,
+                            Street = "",
+                            ZipCode = ""
+                        },
+                        new
+                        {
+                            Id = new Guid("a2a44a1b-2070-43b9-8387-d45a76703780"),
+                            City = "",
+                            Created = new DateTime(2021, 3, 9, 16, 18, 43, 422, DateTimeKind.Local).AddTicks(1040),
+                            Description = "KFC is an American fast food restaurant chain headquartered in Louisville, Kentucky, that specializes in fried chicken. It is the world's second-largest restaurant chain after McDonald's, with 22,621 locations globally in 150 countries as of December 2019. The chain is a subsidiary of Yum!",
+                            ImageUrl = "https://3kytnw3txc4d32157aq3xvd1-wpengine.netdna-ssl.com/wp-content/uploads/2018/01/kfc-snabbmatsrestaurang-foto-kfc-465x312.jpg",
+                            Name = "KFC",
+                            Rating = 0.0,
+                            Street = "",
+                            ZipCode = ""
+                        });
                 });
 
             modelBuilder.Entity("FoodResort.Data.Review", b =>

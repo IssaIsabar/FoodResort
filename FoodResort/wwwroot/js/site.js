@@ -2,3 +2,14 @@
 // for details on configuring this project to bundle and minify static web assets.
 
 // Write your JavaScript code.
+
+
+$('#searchBtn').click(function () {
+
+    var searchTerm = $('#searchInput').val();
+
+    var route = "/Restaurants/" + searchTerm
+
+    window.location.replace(route);
+
+});
