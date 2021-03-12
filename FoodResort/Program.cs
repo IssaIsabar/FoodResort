@@ -22,5 +22,7 @@ namespace FoodResort
                 {
                     webBuilder.UseStartup<Startup>();
                 });
+
+ 
     }
 }

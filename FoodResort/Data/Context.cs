@@ -21,13 +21,13 @@ namespace FoodResort.Data
         {
             base.OnModelCreating(builder);
 
-            builder.Entity<User>().ToTable("Users");
-            builder.Entity<IdentityUserRole<string>>().ToTable("UserRoles");
-            builder.Entity<IdentityRoleClaim<string>>().ToTable("RoleClaims");
-            builder.Entity<IdentityUserLogin<string>>().ToTable("UserLogins");
-            builder.Entity<IdentityUserClaim<string>>().ToTable("UserClaims");
-            builder.Entity<IdentityUserToken<string>>().ToTable("UserTokens");
-            builder.Entity<IdentityRole>().ToTable("Roles");
+            //builder.Entity<User>().ToTable("Users");
+            //builder.Entity<IdentityUserRole<string>>().ToTable("UserRoles");
+            //builder.Entity<IdentityRoleClaim<string>>().ToTable("RoleClaims");
+            //builder.Entity<IdentityUserLogin<string>>().ToTable("UserLogins");
+            //builder.Entity<IdentityUserClaim<string>>().ToTable("UserClaims");
+            //builder.Entity<IdentityUserToken<string>>().ToTable("UserTokens");
+            //builder.Entity<IdentityRole>().ToTable("Roles");
 
             builder.Entity<Content>().HasData(new Content("About","Lorem ipsum"));
             builder.Entity<Content>().HasData(new Content("FAQ", "Lorem ipsum"));

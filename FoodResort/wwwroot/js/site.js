@@ -13,3 +13,7 @@ $('#searchBtn').click(function () {
     window.location.replace(route);
 
 });
+
+
+
+// REGISTER JS

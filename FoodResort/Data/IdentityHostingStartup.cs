@@ -1,5 +1,6 @@
 ﻿using FoodResort.Data;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -17,7 +18,7 @@ namespace FoodResort.Areas.Identity
                         context.Configuration.GetConnectionString("ContextConnection")));
 
                 services.AddDefaultIdentity<User>(options => options.SignIn.RequireConfirmedAccount = false)
-                    .AddEntityFrameworkStores<Context>();
+                    .AddRoles<IdentityRole>().AddEntityFrameworkStores<Context>().AddUserManager<UserManager<User>>();
             });
         }
     }

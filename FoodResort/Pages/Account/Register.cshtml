@@ -1,0 +1,22 @@
+﻿@page
+
+@model FoodResort.Pages.Account.RegisterModel
+
+
+<form asp-page-handler="Register" method="post">
+    
+    <input placeholder="Email" asp-for="pageModel.Email" />
+
+    <input placeholder="Username" asp-for="pageModel.Username" />
+
+    <input placeholder="Password" type="password"  asp-for="pageModel.Password" />
+
+    <input type="checkbox" value="Remember me!" asp-for="pageModel.RememeberMe" />
+
+    <button class="btn btn-default">Register</button>
+
+    <h1>@ViewData["message"]</h1>
+</form>
+
+
+

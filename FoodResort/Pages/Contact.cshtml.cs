@@ -23,8 +23,6 @@ namespace FoodResort.Pages
             _logger = logger;
         }
 
-        
-
         public void OnGet()
         {
 
