@@ -29,13 +29,11 @@ namespace FoodResort.Pages.Account
             _context = context;
         }
 
-
-
         public void OnGet()
         {
         }
 
-        public async void  OnPostRegister()
+        public async Task<IActionResult> OnPostRegister()
         {
 
             if (!string.IsNullOrWhiteSpace(pageModel.Username) && !string.IsNullOrWhiteSpace(pageModel.Email) && !string.IsNullOrWhiteSpace(pageModel.Password))
@@ -51,7 +49,7 @@ namespace FoodResort.Pages.Account
 
                 if (result.Succeeded)
                 {
-                    var signIn = await _signInManager.CheckPasswordSignInAsync(user, pageModel.Password, false);
+                    var signIn = await _signInManager.PasswordSignInAsync(user, pageModel.Password, pageModel.RememeberMe, false);
 
                     if (signIn.Succeeded)
                     {
@@ -59,15 +57,13 @@ namespace FoodResort.Pages.Account
 
                     }
                 }
-
-
-               var x = string.Empty;
-
             }
             else
             {
                 ViewData["message"] = "Your model is not valid, you seem to be missing something";
             }
+
+            return Page();
 
         }
     }
