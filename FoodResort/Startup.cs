@@ -1,5 +1,7 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
@@ -41,6 +43,17 @@ namespace FoodResort
                 options.Password.RequireLowercase = false;
             });
 
+            services.ConfigureApplicationCookie(options => 
+            {
+                options.Cookie.Name = "FoodResortCookie";
+                options.LoginPath = "/account/login";
+                options.LogoutPath = "/account/logout";
+                options.AccessDeniedPath = "/access-denied";
+                options.ReturnUrlParameter = CookieAuthenticationDefaults.ReturnUrlParameter;
+                options.SlidingExpiration = true;
+                options.Cookie.SameSite = Microsoft.AspNetCore.Http.SameSiteMode.None;            
+            });
+
             services.AddRazorPages();
 
             services.AddScoped<NavigationService>();
@@ -59,13 +72,16 @@ namespace FoodResort
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
- 
-            
+
+            app.UseCookiePolicy(new CookiePolicyOptions
+            {
+                Secure = CookieSecurePolicy.Always
+            });
+
             // user/profile
             app.UseHttpsRedirection();
 
             app.UseStaticFiles();
-
 
             // controller 
             app.UseRouting();

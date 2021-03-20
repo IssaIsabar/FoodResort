@@ -1,17 +1,32 @@
 ﻿@page "{searchQuery?}"
 @model FoodResort.Pages.RestaurantsModel
 
-@foreach (var place in Model.Places)
-{
 
-    <div class="card bg-dark text-white">
-        <img src="@place.ImageUrl" class="card-img" alt="@place.Name">
-        <div class="card-img-overlay">
-            <h5 class="card-title">@place.Name</h5>
-            <p class="card-text">@place.Description</p>
-            <p class="card-text">Last updated @place.Created.ToShortDateString()</p>
+
+
+
+<div class="row">
+
+    @foreach (var place in Model.Places)
+    {
+
+    <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3 col-paddding">
+
+        <div class="card" style="width: 18rem;">
+            <img src="@place.ImageUrl" class="card-img-top" alt="@place.Name">
+            <div class="card-body">
+                <h5 class="card-title">@place.Name</h5>
+                <p class="card-text">@place.Description</p>
+
+
+                <a href="/places/detail/@place.Id" class="btn btn-primary">Reviews</a>
+
+
+            </div>
         </div>
+
+
     </div>
+    }
 
-
-}
+</div>

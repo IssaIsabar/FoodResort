@@ -1,0 +1,27 @@
+﻿@page "{placeId}"
+@model FoodResort.Pages.Places.DetailModel
+@{
+}
+
+
+<h1>@ViewData["title"]</h1>
+
+@if (!string.IsNullOrWhiteSpace(ViewData["imgUrl"].ToString()))
+{
+    <img src="@ViewData["imgUrl"]" class="img-fluid" />
+}
+
+<p>@ViewData["description"]</p>
+
+<hr />
+
+<h3>Reviews</h3>
+
+
+@if (User.Identity.IsAuthenticated)
+{
+    <!-- show review form -->
+
+}
+
+<!-- List of all the reviews -->

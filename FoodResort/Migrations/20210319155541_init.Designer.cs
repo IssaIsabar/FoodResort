@@ -10,22 +10,21 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FoodResort.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20210316145142_usertableupdate")]
-    partial class usertableupdate
+    [Migration("20210319155541_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("ProductVersion", "5.0.3")
+                .HasAnnotation("ProductVersion", "5.0.4")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
             modelBuilder.Entity("FoodResort.Data.Content", b =>
                 {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Body")
                         .HasColumnType("nvarchar(max)");
@@ -43,32 +42,31 @@ namespace FoodResort.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("f25de798-1d8d-48a8-91dc-f0949a0588f3"),
+                            Id = "0364573b-9c64-408c-a7ba-59b5bf903e00",
                             Body = "Lorem ipsum",
-                            Created = new DateTime(2021, 3, 16, 15, 51, 41, 957, DateTimeKind.Local).AddTicks(3588),
+                            Created = new DateTime(2021, 3, 19, 16, 55, 40, 395, DateTimeKind.Local).AddTicks(5302),
                             Title = "About"
                         },
                         new
                         {
-                            Id = new Guid("e033760b-76a8-4b25-b563-3c8b391cb64e"),
+                            Id = "918bd67c-fda4-437d-bab7-e4df8be8cafb",
                             Body = "Lorem ipsum",
-                            Created = new DateTime(2021, 3, 16, 15, 51, 41, 961, DateTimeKind.Local).AddTicks(9841),
+                            Created = new DateTime(2021, 3, 19, 16, 55, 40, 400, DateTimeKind.Local).AddTicks(5825),
                             Title = "FAQ"
                         },
                         new
                         {
-                            Id = new Guid("07671923-46c5-47cf-bac2-a1ba4bd6efa3"),
+                            Id = "93b76e10-9050-4d44-b2ee-60a4e1704312",
                             Body = "Lorem ipsum",
-                            Created = new DateTime(2021, 3, 16, 15, 51, 41, 962, DateTimeKind.Local).AddTicks(86),
+                            Created = new DateTime(2021, 3, 19, 16, 55, 40, 400, DateTimeKind.Local).AddTicks(6055),
                             Title = "Contact"
                         });
                 });
 
             modelBuilder.Entity("FoodResort.Data.Place", b =>
                 {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("City")
                         .HasColumnType("nvarchar(max)");
@@ -101,9 +99,9 @@ namespace FoodResort.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("e946b7f7-d004-4d55-9b01-5670e6e1f35a"),
+                            Id = "d14dfd24-e6bd-4296-8916-948dabf605bc",
                             City = "",
-                            Created = new DateTime(2021, 3, 16, 15, 51, 41, 962, DateTimeKind.Local).AddTicks(1776),
+                            Created = new DateTime(2021, 3, 19, 16, 55, 40, 400, DateTimeKind.Local).AddTicks(7577),
                             Description = "McDonald's Corporation is an American fast food company, founded in 1940 as a restaurant operated by Richard and Maurice McDonald, in San Bernardino, California, United States.",
                             ImageUrl = "https://www.qsrmagazine.com/sites/default/files/styles/story_page/public/story/mcdonalds-getting-even-more-serious-about-tech.jpg",
                             Name = "McDonald's",
@@ -113,9 +111,9 @@ namespace FoodResort.Migrations
                         },
                         new
                         {
-                            Id = new Guid("5cebb410-9577-491b-9d4e-e1db6354ea96"),
+                            Id = "0220ef0b-6eb2-44f9-b236-68f8eb46729c",
                             City = "",
-                            Created = new DateTime(2021, 3, 16, 15, 51, 41, 962, DateTimeKind.Local).AddTicks(6098),
+                            Created = new DateTime(2021, 3, 19, 16, 55, 40, 401, DateTimeKind.Local).AddTicks(2073),
                             Description = "Burger King is an American multinational chain of hamburger fast food restaurants. Headquartered in Miami-Dade County, Florida, the company was founded in 1953 as Insta-Burger King, a Jacksonville, Florida–based restaurant chain.",
                             ImageUrl = "https://www.fastighetsvarlden.se/wp-content/uploads/2019/01/fv-burger-king.jpg",
                             Name = "Burger King",
@@ -125,9 +123,9 @@ namespace FoodResort.Migrations
                         },
                         new
                         {
-                            Id = new Guid("ff3b6ece-42fa-4ea6-ab9c-48583036e2ed"),
+                            Id = "a84a034c-308e-4578-b25a-11b4f1b18b2d",
                             City = "",
-                            Created = new DateTime(2021, 3, 16, 15, 51, 41, 962, DateTimeKind.Local).AddTicks(6146),
+                            Created = new DateTime(2021, 3, 19, 16, 55, 40, 401, DateTimeKind.Local).AddTicks(2127),
                             Description = "Max Burgers Aktiebolag, earlier Max Hamburgerrestauranger AB, is a fast food corporation from Sweden.",
                             ImageUrl = "https://www.max.se/contentassets/1b89f49ce6974a1a86271668c1406db4/restaurantstockholm-ulvsundavagen.png",
                             Name = "Max",
@@ -137,9 +135,9 @@ namespace FoodResort.Migrations
                         },
                         new
                         {
-                            Id = new Guid("8375b1d3-5bb8-4c5e-adcc-9f1a57140e90"),
+                            Id = "3353c7aa-f475-403a-a5a3-e25b91b330ff",
                             City = "",
-                            Created = new DateTime(2021, 3, 16, 15, 51, 41, 962, DateTimeKind.Local).AddTicks(6170),
+                            Created = new DateTime(2021, 3, 19, 16, 55, 40, 401, DateTimeKind.Local).AddTicks(2155),
                             Description = "Subway is an American fast food restaurant franchise that primarily sells submarine sandwiches, salads and beverages. It was founded by the 17 year old Fred DeLuca and financed by Peter Buck in 1965 as Pete's Super Submarines in Bridgeport, Connecticut",
                             ImageUrl = "https://insidefmcg.com.au/wp-content/uploads/2020/11/Subway7.jpg",
                             Name = "Subway",
@@ -149,9 +147,9 @@ namespace FoodResort.Migrations
                         },
                         new
                         {
-                            Id = new Guid("918a629a-bea2-4307-980c-69ce588ffadd"),
+                            Id = "82bfac4c-d599-4208-9af8-d51dfdb6410a",
                             City = "",
-                            Created = new DateTime(2021, 3, 16, 15, 51, 41, 962, DateTimeKind.Local).AddTicks(6192),
+                            Created = new DateTime(2021, 3, 19, 16, 55, 40, 401, DateTimeKind.Local).AddTicks(2179),
                             Description = "Pizza Hut is an American restaurant chain and international franchise founded in 1958 in Wichita, Kansas by Dan and Frank Carney. It provides pizza and other Italian-American dishes, including pasta, side dishes and desserts.",
                             ImageUrl = "https://1.bp.blogspot.com/-fXQqW5OlBwY/Wzm4v7YZ2gI/AAAAAAABA0w/TaEGHb5vSqEld1xm2M9ia1QQuPj7-qzbgCKgBGAs/s1600/20180701_172010.jpg",
                             Name = "Pizza hut",
@@ -161,9 +159,9 @@ namespace FoodResort.Migrations
                         },
                         new
                         {
-                            Id = new Guid("2aaf030e-fb03-4091-bf30-2aa61ae01eab"),
+                            Id = "8f9e5c01-77a3-44a2-a0d5-85d75fc2a9af",
                             City = "",
-                            Created = new DateTime(2021, 3, 16, 15, 51, 41, 962, DateTimeKind.Local).AddTicks(6325),
+                            Created = new DateTime(2021, 3, 19, 16, 55, 40, 401, DateTimeKind.Local).AddTicks(2208),
                             Description = "KFC is an American fast food restaurant chain headquartered in Louisville, Kentucky, that specializes in fried chicken. It is the world's second-largest restaurant chain after McDonald's, with 22,621 locations globally in 150 countries as of December 2019. The chain is a subsidiary of Yum!",
                             ImageUrl = "https://3kytnw3txc4d32157aq3xvd1-wpengine.netdna-ssl.com/wp-content/uploads/2018/01/kfc-snabbmatsrestaurang-foto-kfc-465x312.jpg",
                             Name = "KFC",
@@ -175,9 +173,8 @@ namespace FoodResort.Migrations
 
             modelBuilder.Entity("FoodResort.Data.Review", b =>
                 {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<DateTime>("Created")
                         .HasColumnType("datetime2");
@@ -188,6 +185,9 @@ namespace FoodResort.Migrations
                     b.Property<Guid>("PlaceId")
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<string>("PlaceId1")
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<double>("Rating")
                         .HasColumnType("float");
 
@@ -196,7 +196,7 @@ namespace FoodResort.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("PlaceId");
+                    b.HasIndex("PlaceId1");
 
                     b.HasIndex("UserId");
 
@@ -422,9 +422,7 @@ namespace FoodResort.Migrations
                 {
                     b.HasOne("FoodResort.Data.Place", "Place")
                         .WithMany("Reviews")
-                        .HasForeignKey("PlaceId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("PlaceId1");
 
                     b.HasOne("FoodResort.Data.User", "User")
                         .WithMany("Reviews")

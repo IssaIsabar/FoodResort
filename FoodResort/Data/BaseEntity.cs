@@ -9,13 +9,13 @@ namespace FoodResort.Data
     public class BaseEntity
     {
         [Key]
-        public Guid Id { get; set; }
+        public string Id { get; set; }
         [Required]
         public DateTime Created { get; set; }
 
         public BaseEntity()
         {
-            Id = Guid.NewGuid();
+            Id = Guid.NewGuid().ToString();
             Created = DateTime.Now;
         }
     }
