@@ -16,11 +16,8 @@
             <img src="@place.ImageUrl" class="card-img-top" alt="@place.Name">
             <div class="card-body">
                 <h5 class="card-title">@place.Name</h5>
-                <p class="card-text">@place.Description</p>
-
-
+                <p class="card-text">@place.Description.Substring(0, 75)..."</p>
                 <a href="/places/detail/@place.Id" class="btn btn-primary">Reviews</a>
-
 
             </div>
         </div>

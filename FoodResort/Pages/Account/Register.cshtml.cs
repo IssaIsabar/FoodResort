@@ -49,11 +49,21 @@ namespace FoodResort.Pages.Account
 
                 if (result.Succeeded)
                 {
+
+                    if (_context.Users.Count() == 1)
+                    {
+                        await _userManager.AddToRoleAsync(user, "Admin");
+                    }
+                    else
+                    {
+                        await _userManager.AddToRoleAsync(user, "User");
+                    }
+
                     var signIn = await _signInManager.PasswordSignInAsync(user, pageModel.Password, pageModel.RememeberMe, false);
 
                     if (signIn.Succeeded)
                     {
-                        ViewData["message"] = "Account was created and is now sigen in";
+                        return LocalRedirect("/");
 
                     }
                 }

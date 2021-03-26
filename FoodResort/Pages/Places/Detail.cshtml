@@ -20,7 +20,17 @@
 
 @if (User.Identity.IsAuthenticated)
 {
-    <!-- show review form -->
+    <form asp-page-handler="AddReview" method="post">
+
+
+        <input type="text" name="description" placeholder="Your Review..." />
+        <br />
+        <input type="number" name="rating" max="5" min="1" placeholder="Your score (max 5)" />
+        <br />
+        <input type="hidden" name="placeid" value="@ViewContext.RouteData.Values["placeId"]"/>
+        <button type="submit">Add Review</button>
+    
+    </form>
 
 }
 

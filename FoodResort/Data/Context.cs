@@ -12,6 +12,7 @@ namespace FoodResort.Data
     {
         public DbSet<Content> Content { get; set; }
         public DbSet<Place> Places { get; set; }
+        public DbSet<Review> Review { get; set; }
 
         public Context(DbContextOptions<Context> options) : base(options)
         {
@@ -21,6 +22,7 @@ namespace FoodResort.Data
         {
             base.OnModelCreating(builder);
 
+
             builder.Entity<User>().ToTable("Users");
             builder.Entity<IdentityUserRole<string>>().ToTable("UserRoles");
             builder.Entity<IdentityRoleClaim<string>>().ToTable("RoleClaims");
@@ -28,6 +30,28 @@ namespace FoodResort.Data
             builder.Entity<IdentityUserClaim<string>>().ToTable("UserClaims");
             builder.Entity<IdentityUserToken<string>>().ToTable("UserTokens");
             builder.Entity<IdentityRole>().ToTable("Roles");
+
+
+            string adminRoleId = "24c0f25f-7519-494e-b291-b6282439a949";
+            string userRoleId = "6f539821-a125-4c21-886f-417e604f355b";
+
+
+            builder.Entity<IdentityRole>().HasData(new IdentityRole 
+            { 
+                Id = adminRoleId,
+                Name = "Admin",
+                NormalizedName = "ADMIN"
+
+            });
+
+            builder.Entity<IdentityRole>().HasData(new IdentityRole
+            {
+                Id = userRoleId,
+                Name = "User",
+                NormalizedName = "USER"
+
+            });
+
 
             builder.Entity<Content>().HasData(new Content("About","Lorem ipsum"));
             builder.Entity<Content>().HasData(new Content("FAQ", "Lorem ipsum"));

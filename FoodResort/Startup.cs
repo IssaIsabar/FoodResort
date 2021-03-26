@@ -48,7 +48,7 @@ namespace FoodResort
                 options.Cookie.Name = "FoodResortCookie";
                 options.LoginPath = "/account/login";
                 options.LogoutPath = "/account/logout";
-                options.AccessDeniedPath = "/access-denied";
+                options.AccessDeniedPath = "/account/login/accessdenied";
                 options.ReturnUrlParameter = CookieAuthenticationDefaults.ReturnUrlParameter;
                 options.SlidingExpiration = true;
                 options.Cookie.SameSite = Microsoft.AspNetCore.Http.SameSiteMode.None;            

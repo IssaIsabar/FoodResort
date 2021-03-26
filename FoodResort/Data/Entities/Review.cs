@@ -17,6 +17,22 @@ namespace FoodResort.Data
         public Guid PlaceId { get; set; }
         public virtual Place Place { get; set; }
 
+        public Review()
+        {
+                
+        }
+
+        public Review(string desc, double rating, User user, Place place)
+        {
+            Description = desc;
+            Rating = rating;
+            User = user;
+            UserId = user.Id;
+            Place = place;
+            PlaceId = new Guid(place.Id);
+
+        }
+
     }
 
 }

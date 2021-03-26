@@ -22,9 +22,16 @@ namespace FoodResort.Pages.Account
             _signInManager = signInManager;
         }
 
-        public void OnGet()
+        public void OnGet(string value)
         {
-           
+            if (value is not null)
+            {
+                if(value.Equals("accessdenied"))
+                {
+                    ViewData["message"] = "You dont have access to that page, please sign in with the correct account.";
+                }
+                
+            }
         }
 
         public async Task<IActionResult> OnPostLogin(string user, string password, bool rememberMe)
@@ -43,9 +50,7 @@ namespace FoodResort.Pages.Account
 
                         if (result.Succeeded)
                         {
-                            ViewData["message"] = "You are signed in!";
-                            
-                            // redirect to logged in page
+                            return LocalRedirect("/");
                         }
                         else
                         {

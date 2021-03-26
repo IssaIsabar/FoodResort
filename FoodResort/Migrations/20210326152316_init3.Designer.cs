@@ -4,14 +4,16 @@ using FoodResort.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace FoodResort.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20210326152316_init3")]
+    partial class init3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -40,23 +42,23 @@ namespace FoodResort.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "c500ac71-12e2-4a60-ad84-f14e1f249d44",
+                            Id = "7e73f5f4-c09a-4704-bc2e-9d96a20ee2ce",
                             Body = "Lorem ipsum",
-                            Created = new DateTime(2021, 3, 26, 16, 26, 34, 980, DateTimeKind.Local).AddTicks(7336),
+                            Created = new DateTime(2021, 3, 26, 16, 23, 15, 863, DateTimeKind.Local).AddTicks(1244),
                             Title = "About"
                         },
                         new
                         {
-                            Id = "0bd61861-7047-40bf-b3fc-a37a3009a62d",
+                            Id = "6d771b6e-cbd6-488b-9296-96b5f5a199ba",
                             Body = "Lorem ipsum",
-                            Created = new DateTime(2021, 3, 26, 16, 26, 34, 984, DateTimeKind.Local).AddTicks(5150),
+                            Created = new DateTime(2021, 3, 26, 16, 23, 15, 866, DateTimeKind.Local).AddTicks(7544),
                             Title = "FAQ"
                         },
                         new
                         {
-                            Id = "c52a132d-f741-4b77-ac79-740f8e5d2df3",
+                            Id = "3e2134a5-b940-4d0d-9932-8a2cf23a9eb1",
                             Body = "Lorem ipsum",
-                            Created = new DateTime(2021, 3, 26, 16, 26, 34, 984, DateTimeKind.Local).AddTicks(5295),
+                            Created = new DateTime(2021, 3, 26, 16, 23, 15, 866, DateTimeKind.Local).AddTicks(7661),
                             Title = "Contact"
                         });
                 });
@@ -97,9 +99,9 @@ namespace FoodResort.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "9af37aa4-f251-4c42-835f-d01f5c6ee5a3",
+                            Id = "740fd9d5-72a2-444a-86fc-e1becb25b2ea",
                             City = "",
-                            Created = new DateTime(2021, 3, 26, 16, 26, 34, 984, DateTimeKind.Local).AddTicks(7354),
+                            Created = new DateTime(2021, 3, 26, 16, 23, 15, 868, DateTimeKind.Local).AddTicks(3504),
                             Description = "McDonald's Corporation is an American fast food company, founded in 1940 as a restaurant operated by Richard and Maurice McDonald, in San Bernardino, California, United States.",
                             ImageUrl = "https://www.qsrmagazine.com/sites/default/files/styles/story_page/public/story/mcdonalds-getting-even-more-serious-about-tech.jpg",
                             Name = "McDonald's",
@@ -109,9 +111,9 @@ namespace FoodResort.Migrations
                         },
                         new
                         {
-                            Id = "54d1fcc6-0d19-41c8-86af-3199620aa608",
+                            Id = "4d25ad8c-e95f-4d21-9acd-4b9a7afa891d",
                             City = "",
-                            Created = new DateTime(2021, 3, 26, 16, 26, 34, 985, DateTimeKind.Local).AddTicks(1677),
+                            Created = new DateTime(2021, 3, 26, 16, 23, 15, 869, DateTimeKind.Local).AddTicks(2520),
                             Description = "Burger King is an American multinational chain of hamburger fast food restaurants. Headquartered in Miami-Dade County, Florida, the company was founded in 1953 as Insta-Burger King, a Jacksonville, Florida–based restaurant chain.",
                             ImageUrl = "https://www.fastighetsvarlden.se/wp-content/uploads/2019/01/fv-burger-king.jpg",
                             Name = "Burger King",
@@ -121,9 +123,9 @@ namespace FoodResort.Migrations
                         },
                         new
                         {
-                            Id = "39876b14-44eb-4cd4-9a3c-75507bdd137d",
+                            Id = "fff9ffe7-a732-46b0-9e7a-b3312a9fdfdc",
                             City = "",
-                            Created = new DateTime(2021, 3, 26, 16, 26, 34, 985, DateTimeKind.Local).AddTicks(1728),
+                            Created = new DateTime(2021, 3, 26, 16, 23, 15, 869, DateTimeKind.Local).AddTicks(2613),
                             Description = "Max Burgers Aktiebolag, earlier Max Hamburgerrestauranger AB, is a fast food corporation from Sweden.",
                             ImageUrl = "https://www.max.se/contentassets/1b89f49ce6974a1a86271668c1406db4/restaurantstockholm-ulvsundavagen.png",
                             Name = "Max",
@@ -133,9 +135,9 @@ namespace FoodResort.Migrations
                         },
                         new
                         {
-                            Id = "24c53929-3a9c-489b-8178-19a3aca64a54",
+                            Id = "c8f41ec5-2464-4e28-a369-49044a22df61",
                             City = "",
-                            Created = new DateTime(2021, 3, 26, 16, 26, 34, 985, DateTimeKind.Local).AddTicks(1753),
+                            Created = new DateTime(2021, 3, 26, 16, 23, 15, 869, DateTimeKind.Local).AddTicks(2641),
                             Description = "Subway is an American fast food restaurant franchise that primarily sells submarine sandwiches, salads and beverages. It was founded by the 17 year old Fred DeLuca and financed by Peter Buck in 1965 as Pete's Super Submarines in Bridgeport, Connecticut",
                             ImageUrl = "https://insidefmcg.com.au/wp-content/uploads/2020/11/Subway7.jpg",
                             Name = "Subway",
@@ -145,9 +147,9 @@ namespace FoodResort.Migrations
                         },
                         new
                         {
-                            Id = "3d755314-c49c-437e-bd32-1f1bf8e66268",
+                            Id = "627c5f8e-0c99-445d-8689-63646387d25b",
                             City = "",
-                            Created = new DateTime(2021, 3, 26, 16, 26, 34, 985, DateTimeKind.Local).AddTicks(1777),
+                            Created = new DateTime(2021, 3, 26, 16, 23, 15, 869, DateTimeKind.Local).AddTicks(2665),
                             Description = "Pizza Hut is an American restaurant chain and international franchise founded in 1958 in Wichita, Kansas by Dan and Frank Carney. It provides pizza and other Italian-American dishes, including pasta, side dishes and desserts.",
                             ImageUrl = "https://1.bp.blogspot.com/-fXQqW5OlBwY/Wzm4v7YZ2gI/AAAAAAABA0w/TaEGHb5vSqEld1xm2M9ia1QQuPj7-qzbgCKgBGAs/s1600/20180701_172010.jpg",
                             Name = "Pizza hut",
@@ -157,9 +159,9 @@ namespace FoodResort.Migrations
                         },
                         new
                         {
-                            Id = "bd58b83e-62de-42a1-b09c-43a5b245d447",
+                            Id = "757d518b-a271-452d-91a0-8c047ee042c5",
                             City = "",
-                            Created = new DateTime(2021, 3, 26, 16, 26, 34, 985, DateTimeKind.Local).AddTicks(1821),
+                            Created = new DateTime(2021, 3, 26, 16, 23, 15, 869, DateTimeKind.Local).AddTicks(2696),
                             Description = "KFC is an American fast food restaurant chain headquartered in Louisville, Kentucky, that specializes in fried chicken. It is the world's second-largest restaurant chain after McDonald's, with 22,621 locations globally in 150 countries as of December 2019. The chain is a subsidiary of Yum!",
                             ImageUrl = "https://3kytnw3txc4d32157aq3xvd1-wpengine.netdna-ssl.com/wp-content/uploads/2018/01/kfc-snabbmatsrestaurang-foto-kfc-465x312.jpg",
                             Name = "KFC",
@@ -310,15 +312,15 @@ namespace FoodResort.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "24c0f25f-7519-494e-b291-b6282439a949",
-                            ConcurrencyStamp = "021b3df6-4a19-4c7f-86ca-319088dd0772",
+                            Id = "a64e851c-dc86-4180-821c-4ddfa90d354c",
+                            ConcurrencyStamp = "f5ea6d4d-b869-40a3-bf01-44a2458f2c13",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "6f539821-a125-4c21-886f-417e604f355b",
-                            ConcurrencyStamp = "be3c356d-c328-4484-ba6d-85243b5e2609",
+                            Id = "d8d32131-d2cf-40a8-89a5-d295979ed041",
+                            ConcurrencyStamp = "e511f388-c7d0-4f24-ac6d-69621c82581c",
                             Name = "User",
                             NormalizedName = "USER"
                         });

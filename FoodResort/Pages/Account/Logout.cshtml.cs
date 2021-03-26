@@ -18,7 +18,7 @@ namespace FoodResort.Pages.Account
             _signInManager = signInManager;
         }
 
-        public async void OnGet()
+        public async Task<IActionResult> OnGet()
         {
             if (HttpContext.Request.Cookies.Count > 0)
             {
@@ -31,9 +31,9 @@ namespace FoodResort.Pages.Account
 
                 await _signInManager.SignOutAsync();
 
-                LocalRedirect("/");
-
             }
+
+            return LocalRedirect("/");
         }
     }
 }
